@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="verbose" default="false"/>
+
+  <arg name="world_name" default="test_world"/> 
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find grid_map_generator_bringup)/worlds/$(arg world_name).world"/> 
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+  </include>
+
+</launch>
